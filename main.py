@@ -23,7 +23,6 @@ def matrix_multiplication():
     np.matmul(a, b, out=c)
 
 
-
 if __name__ == '__main__':
 
     matrix_multiplication()
