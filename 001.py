@@ -5,9 +5,9 @@ def calculate_error(desired_target, actual_output):
     err = desired_target - actual_output
     return err
 
-
 # (x, y) co-ordinates
-training_data = [(3, 1), (1, 3)]
+training_data = [[3, 1, 0], [1, 3, 1], [3.1, 0.975, 0]]
+eval_data = [[3.02, 0.99, 0], [1.03, 3.04, 1]]
 
 # since it's linear y = ax
 a, x = 0, 0
@@ -17,10 +17,14 @@ random.seed(13)
 a = random.random()
 # print(a)
 
+def eval_results():
+
+    pass
+
 
 def first_sample(a, training_data):
 
-    (x, y) = training_data[0]
+    x, y, label = training_data[0]
     message = f"A : {a} \t y : {y} \t x : {x} \t"
 
     actual_output = a*x
