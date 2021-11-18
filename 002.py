@@ -20,4 +20,4 @@ first.split_train_eval_data(data)
 first.first_sample()
 first.second_sample()
 
-print(first.check_point_above_classifier(6, 3))
+# print(first.check_point_above_classifier(6, 3))

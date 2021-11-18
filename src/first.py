@@ -20,13 +20,16 @@ class First:
         self.train_data = data[:train_data_length]
         self.test_data = data[-test_data_length:]
 
-    def calculate_desired_target(self, y, actual_output):
+    def calculate_desired_target(self, x, y, actual_output):
         b = random.random()
 
-        if y > actual_output:
-            desired_target = y + b
-        else:
+        # print(x)
+
+        if self.check_point_above_classifier(x, y):
             desired_target = y - b
+        else:
+            desired_target = y + b
+
         return desired_target
 
     def calculate_error(self, desired_target, actual_output):
@@ -55,7 +58,7 @@ class First:
         actual_output = self.slope * x
         message += f"Actual output : {actual_output} \t"
 
-        desired_target = self.calculate_desired_target(y, actual_output)
+        desired_target = self.calculate_desired_target(x, y, actual_output)
         message += f"Desired target : {desired_target} \t"
 
         error = self.calculate_error(desired_target, actual_output)
@@ -74,7 +77,7 @@ class First:
         actual_output = self.slope * x
         message += f"Actual output : {actual_output} \t"
 
-        desired_target = self.calculate_desired_target(y, actual_output)
+        desired_target = self.calculate_desired_target(x, y, actual_output)
         message += f"Desired target : {desired_target} \t"
 
         print(message)
