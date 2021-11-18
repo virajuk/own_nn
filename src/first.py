@@ -37,7 +37,15 @@ class First:
     def calculate_increment(self, x, error):
 
         delta = error/x
+        self.slope += delta
         return delta
+
+    def check_point_above_classifier(self, x, y):
+
+        if (y - self.slope*x) > 0:
+            return True
+        else:
+            return False
 
     def first_sample(self):
 
@@ -55,5 +63,18 @@ class First:
 
         delta = self.calculate_increment(x, error)
         message += f"Delta : {delta} \t"
+
+        print(message)
+
+    def second_sample(self):
+
+        x, y, label = self.train_data[1]
+        message = f"Slope : {self.slope} \t y : {y} \t x : {x} \t"
+
+        actual_output = self.slope * x
+        message += f"Actual output : {actual_output} \t"
+
+        desired_target = self.calculate_desired_target(y, actual_output)
+        message += f"Desired target : {desired_target} \t"
 
         print(message)
