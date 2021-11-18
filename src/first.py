@@ -29,6 +29,16 @@ class First:
             desired_target = y - b
         return desired_target
 
+    def calculate_error(self, desired_target, actual_output):
+
+        err = desired_target - actual_output
+        return err
+
+    def calculate_increment(self, x, error):
+
+        delta = error/x
+        return delta
+
     def first_sample(self):
 
         x, y, label = self.train_data[0]
@@ -39,5 +49,11 @@ class First:
 
         desired_target = self.calculate_desired_target(y, actual_output)
         message += f"Desired target : {desired_target} \t"
+
+        error = self.calculate_error(desired_target, actual_output)
+        message += f"Error : {error} \t"
+
+        delta = self.calculate_increment(x, error)
+        message += f"Delta : {delta} \t"
 
         print(message)
