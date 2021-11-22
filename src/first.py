@@ -8,6 +8,7 @@ class First:
 
     train_data, test_data = None, None
     slope = 0
+    message = ""
 
     def __init__(self):
         self.slope = random.random()
@@ -22,6 +23,8 @@ class First:
 
     def calculate_desired_target(self, x, y, label):
         b = random.random()
+
+        self.message += f"b : {b} \t"
 
         if self.check_point_above_classifier(x, y):
             if label:
@@ -57,40 +60,40 @@ class First:
     def first_sample(self):
 
         x, y, label = self.train_data[0]
-        message = f"Slope : {self.slope} \t y : {y} \t x : {x} \t label : {label} \t"
+        self.message = f"Slope : {self.slope} \t y : {y} \t x : {x} \t label : {label} \t"
 
         actual_output = self.slope * x
-        message += f"Actual output : {actual_output} \t"
+        self.message += f"Actual output : {actual_output} \t"
 
         desired_target = self.calculate_desired_target(x, y, label)
-        message += f"Desired target : {desired_target} \t"
+        self.message += f"Desired target : {desired_target} \t"
 
         error = self.calculate_error(desired_target, actual_output)
-        message += f"Error : {error} \t"
+        self.message += f"Error : {error} \t"
 
         delta = self.calculate_increment(x, error)
-        message += f"Delta : {delta} \t"
+        self.message += f"Delta : {delta} \t"
 
-        print(message)
+        print(self.message)
 
     def second_sample(self):
 
         x, y, label = self.train_data[1]
-        message = f"Slope : {self.slope} \t y : {y} \t x : {x} \t label : {label} \t"
+        self.message = f"Slope : {self.slope} \t y : {y} \t x : {x} \t label : {label} \t"
 
         actual_output = self.slope * x
-        message += f"Actual output : {actual_output} \t"
+        self.message += f"Actual output : {actual_output} \t"
 
         desired_target = self.calculate_desired_target(x, y, label)
-        message += f"Desired target : {desired_target} \t"
+        self.message += f"Desired target : {desired_target} \t"
 
         error = self.calculate_error(desired_target, actual_output)
-        message += f"Error : {error} \t"
+        self.message += f"Error : {error} \t"
 
         delta = self.calculate_increment(x, error)
-        message += f"Delta : {delta} \t"
+        self.message += f"Delta : {delta} \t"
 
-        print(message)
+        print(self.message)
 
     def train_model(self):
 
@@ -98,21 +101,21 @@ class First:
         for data_point in self.train_data:
 
             x, y, label = data_point
-            message = f"Slope : {self.slope} \t y : {y} \t x : {x} \t label : {label} \t"
+            self.message = f"Slope : {self.slope} \t y : {y} \t x : {x} \t"
 
             actual_output = self.slope * x
-            message += f"Actual output : {actual_output} \t"
+            self.message += f"Actual output : {actual_output} \t"
 
             desired_target = self.calculate_desired_target(x, y, label)
-            message += f"Desired target : {desired_target} \t"
+            self.message += f"Desired target : {desired_target} \t"
 
             error = self.calculate_error(desired_target, actual_output)
-            message += f"Error : {error} \t"
+            self.message += f"Error : {error} \t"
 
             delta = self.calculate_increment(x, error)
-            message += f"Delta : {delta} \t"
+            self.message += f"Delta : {delta} \t"
 
-            print(message)
+            print(self.message)
 
             count += 1
             # if count == 3:
