@@ -24,18 +24,20 @@ class First:
     def calculate_desired_target(self, x, y, label):
         b = random.random()
 
-        self.message += f"b : {b} \t"
+        self.message += f"b : {format(b, '.4f')} \t"
 
         if self.check_point_above_classifier(x, y):
+            self.message += f" Above : True \t"
             if label:
-                desired_target = y - b
+                desired_target = y
             else:
                 desired_target = y + b
         else:
+            self.message += f" Above : False \t"
             if label:
-                desired_target = y + b
-            else:
                 desired_target = y - b
+            else:
+                desired_target = y
 
         return desired_target
 
@@ -101,19 +103,19 @@ class First:
         for data_point in self.train_data:
 
             x, y, label = data_point
-            self.message = f"Slope : {self.slope} \t y : {y} \t x : {x} \t"
+            self.message = f"Slope : {format(self.slope, '.4f')} \t y : {format(y, '.2f')} \t x : {format(x, '.2f')} \t label : {label} \t"
 
             actual_output = self.slope * x
-            self.message += f"Actual output : {actual_output} \t"
+            self.message += f"Actual output : {format(actual_output, '.4f')} \t"
 
             desired_target = self.calculate_desired_target(x, y, label)
-            self.message += f"Desired target : {desired_target} \t"
+            self.message += f"Desired target : {format(desired_target, '.4f')} \t"
 
             error = self.calculate_error(desired_target, actual_output)
-            self.message += f"Error : {error} \t"
+            self.message += f"Error : {format(error, '.4f')} \t"
 
             delta = self.calculate_increment(x, error)
-            self.message += f"Delta : {delta} \t"
+            self.message += f"Delta : {format(delta, '.4f')} \t"
 
             print(self.message)
 
