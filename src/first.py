@@ -85,41 +85,4 @@ class First:
             # if count == 3:
             #     break
 
-    # def first_sample(self):
-    #
-    #     x, y, label = self.train_data[0]
-    #     self.message = f"Slope : {self.slope} \t y : {y} \t x : {x} \t label : {label} \t"
-    #
-    #     actual_output = self.slope * x
-    #     self.message += f"Actual output : {actual_output} \t"
-    #
-    #     desired_target = self.calculate_desired_target(x, y, label)
-    #     self.message += f"Desired target : {desired_target} \t"
-    #
-    #     error = self.calculate_error(desired_target, actual_output)
-    #     self.message += f"Error : {error} \t"
-    #
-    #     delta = self.calculate_increment(x, error)
-    #     self.message += f"Delta : {delta} \t"
-    #
-    #     print(self.message)
-
-    # def second_sample(self):
-    #
-    #     x, y, label = self.train_data[1]
-    #     self.message = f"Slope : {self.slope} \t y : {y} \t x : {x} \t label : {label} \t"
-    #
-    #     actual_output = self.slope * x
-    #     self.message += f"Actual output : {actual_output} \t"
-    #
-    #     desired_target = self.calculate_desired_target(x, y, label)
-    #     self.message += f"Desired target : {desired_target} \t"
-    #
-    #     error = self.calculate_error(desired_target, actual_output)
-    #     self.message += f"Error : {error} \t"
-    #
-    #     delta = self.calculate_increment(x, error)
-    #     self.message += f"Delta : {delta} \t"
-    #
-    #     print(self.message)
 
