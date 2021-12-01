@@ -1,9 +1,11 @@
 import random
 
+
 def calculate_error(desired_target, actual_output):
 
     err = desired_target - actual_output
     return err
+
 
 # (x, y) co-ordinates
 training_data = [[3, 1, 0], [1, 3, 1], [3.1, 0.975, 0]]
@@ -16,6 +18,7 @@ y = a*x
 random.seed(13)
 a = random.random()
 # print(a)
+
 
 def eval_results():
 
