@@ -12,3 +12,4 @@ def sigmoid_function(x):
 
     y = 1 / (1 + math.exp(-x))
     return y
+
