@@ -1,4 +1,3 @@
-import math
 import numpy as np
 
 
@@ -10,6 +9,6 @@ def sigmoid_function(x):
     :return: y
     """
 
-    y = 1 / (1 + math.exp(-x))
+    y = 1 / (1 + np.exp(-x))
     return y
 
