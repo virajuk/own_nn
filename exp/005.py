@@ -17,3 +17,9 @@ print(x_hidden)
 
 o_hidden = sigmoid_function(x_hidden)
 print(o_hidden)
+
+x_output = np.matmul(weight_hidden_output, o_hidden)
+print(x_output)
+
+output_matrix = sigmoid_function(x_output)
+print(output_matrix)
