@@ -18,7 +18,16 @@ x_output = np.matmul(weight_hidden_output, o_hidden)
 # print(x_output)
 
 output_matrix = ut.sigmoid_function(x_output)
-print(output_matrix)
+# print(output_matrix)
 
 error_matrix = np.array([[1.5], [0.5], [0.3]])
+print(error_matrix)
 
+# print(weight_hidden_output)
+# print(weight_hidden_output.T)
+
+y_hidden = np.matmul(weight_hidden_output.T, error_matrix)
+print(y_hidden)
+
+y_input = np.matmul(weight_input_hidden.T, y_hidden)
+print(y_input)
