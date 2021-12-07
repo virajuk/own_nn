@@ -39,8 +39,8 @@ delta_weight_hidden_output = np.matmul(-2*error_matrix*(ut.sigmoid_function(x_ou
 print(weight_hidden_output)
 print(delta_weight_hidden_output)
 
-updated_weight_hidden_output = weight_hidden_output + delta_weight_hidden_output
-print(updated_weight_hidden_output)
+new_weight_hidden_output = weight_hidden_output + delta_weight_hidden_output
+print(new_weight_hidden_output)
 
+# updating weight matrix [ output & hidden layer ]
 
-# updating weight matrix [ ouput & hidden layer ]
