@@ -42,3 +42,5 @@ print(delta_weight_hidden_output)
 updated_weight_hidden_output = weight_hidden_output + delta_weight_hidden_output
 print(updated_weight_hidden_output)
 
+
+# updating weight matrix [ ouput & hidden layer ]
