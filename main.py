@@ -1,17 +1,20 @@
 import numpy as np
 
 from src.nn import NN
+from src.activation import Sigmoid
 
 nn = NN(0.23)
 
 input_input = np.array([[3.0], [4.5], [1.0]])
 
-nn.input_layer(input_input)
+nn.set_input_layer(input_input)
 # print(nn.input_matrix)
 
 nn.add_hidden_layer(4)
 nn.add_hidden_layer(2)
 nn.add_hidden_layer(5)
-nn.output_layer(2)
+nn.set_output_layer(4)
+
+nn.set_activation_function()
 
 nn.summary()
