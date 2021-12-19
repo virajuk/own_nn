@@ -1,2 +1,2 @@
-from .activation import Sigmoid
+from .activation import Sigmoid, SomethingElse, Relu
 from .nn import NN

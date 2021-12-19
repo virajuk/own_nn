@@ -5,15 +5,15 @@ from .activation import Sigmoid
 
 class NN:
 
-    input_matrix = None
-    weights = []
-    no_of_nodes_in_layers = []
-    activation_function = Sigmoid()
+    input_matrix = np.array([[]])
+    weights = list()
+    no_of_nodes_in_layers = list()
 
-    def __init__(self, lr=0.01):
-        self.learning_rate = lr
+    def __init__(self, **kwargs):
+        self.learning_rate = kwargs.get("lr", 0.01)
+        self.activation_function = kwargs.get("activation", Sigmoid())
 
-    def set_input_layer(self, input_matrix=np.array([])):
+    def set_input_layer(self, input_matrix):
 
         self.input_matrix = input_matrix.flatten()
         self.no_of_nodes_in_layers.append(self.input_matrix.size)
@@ -27,21 +27,9 @@ class NN:
 
         self.add_hidden_layer(no_of_nodes)
 
-    def set_activation_function(self, activation):
-
-        self.activation_function = activation()
-
-    def model(self):
-
-        return self
-
-    def summary(self):
-
-        print(self.no_of_nodes_in_layers)
-        for weight in self.weights:
-
-            # print("###########")
-            print(weight.shape)
-            # print(weight)
-
-        print(self.activation_function.__repr__())
+    def __repr__(self):
+        repr_str = self.__class__.__name__
+        repr_str += f" Learning_rate : {self.learning_rate}"
+        repr_str += f" Activation : {self.activation_function}"
+        repr_str += f" No of nodes in layers : {self.no_of_nodes_in_layers}"
+        return repr_str
