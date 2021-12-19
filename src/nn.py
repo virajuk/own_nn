@@ -27,10 +27,9 @@ class NN:
 
         self.add_hidden_layer(no_of_nodes)
 
-    def set_activation_function(self):
+    def set_activation_function(self, activation):
 
-        pass
-        # self.activation_function =
+        self.activation_function = activation()
 
     def model(self):
 
@@ -45,3 +44,4 @@ class NN:
             print(weight.shape)
             # print(weight)
 
+        print(self.activation_function.__repr__())
