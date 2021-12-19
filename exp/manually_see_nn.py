@@ -1,4 +1,5 @@
 # 3 layer 2 node network
+
 import time
 import numpy as np
 

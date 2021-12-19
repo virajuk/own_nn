@@ -1,6 +1,8 @@
 import math
 import numpy as np
 
+image = np.array()
+
 
 def sigmoid_function(x):
 
