@@ -1,6 +1,7 @@
 import numpy as np
 
 
+# TODO : move this to activation class completely
 def sigmoid_function(x):
 
     """

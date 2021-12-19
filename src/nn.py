@@ -29,5 +29,7 @@ class NN:
         print(self.no_of_nodes_in_layers)
         for weight in self.weights:
 
+            print("###########")
             print(weight.shape)
+            print(weight)
 
